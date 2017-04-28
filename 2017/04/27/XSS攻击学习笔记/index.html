@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  <title>XSS攻击学习笔记 | 刘七七的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近的一次面试题中，有问到XSSE和CSRF。表示当时只知道学名，是“攻击”的意思。。。后来在慕课网中看到一位老师的视频，觉得还不错，就动手跟着学习起来。整理的学习笔记如下。项目源码会在后面贴出，请叫我雷锋~~
+
+XSS的攻击方式
+反射型
+
+
+发出请求是,XSS代码出现在URL中,作为输入提交到服务器端,服务器端解析后响应,XSS代码随着响应内容一起传回浏览器,最后浏览器解析执行XSS代码。这个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XSS攻击学习笔记">
+<meta property="og:url" content="http://yoursite.com/2017/04/27/XSS攻击学习笔记/index.html">
+<meta property="og:site_name" content="刘七七的个人博客">
+<meta property="og:description" content="最近的一次面试题中，有问到XSSE和CSRF。表示当时只知道学名，是“攻击”的意思。。。后来在慕课网中看到一位老师的视频，觉得还不错，就动手跟着学习起来。整理的学习笔记如下。项目源码会在后面贴出，请叫我雷锋~~
+
+XSS的攻击方式
+反射型
+
+
+发出请求是,XSS代码出现在URL中,作为输入提交到服务器端,服务器端解析后响应,XSS代码随着响应内容一起传回浏览器,最后浏览器解析执行XSS代码。这个">
+<meta property="og:updated_time" content="2017-04-28T02:56:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="XSS攻击学习笔记">
+<meta name="twitter:description" content="最近的一次面试题中，有问到XSSE和CSRF。表示当时只知道学名，是“攻击”的意思。。。后来在慕课网中看到一位老师的视频，觉得还不错，就动手跟着学习起来。整理的学习笔记如下。项目源码会在后面贴出，请叫我雷锋~~
+
+XSS的攻击方式
+反射型
+
+
+发出请求是,XSS代码出现在URL中,作为输入提交到服务器端,服务器端解析后响应,XSS代码随着响应内容一起传回浏览器,最后浏览器解析执行XSS代码。这个">
+  
+    <link rel="alternative" href="/atom.xml" title="刘七七的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="https://avatars1.githubusercontent.com/u/17784806?v=3&amp;u=6d751307077c1c047027e44008cef79294fe978c&amp;s=400" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">刘七七</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">程序媛</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/liujinhuan" title="github"><i class="icon-github"></i></a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/p/1005053155918653/home?from=page_100505&mod=TAB&is_all=1#place" title="weibo"><i class="icon-weibo"></i></a>
+		        
+					<a class="mail" target="_blank" href="mailto:1239245052@qq.com" title="mail"><i class="icon-mail"></i></a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-sort"></i></div>
+  		<h1 class="header-author js-mobile-header hide">刘七七</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="https://avatars1.githubusercontent.com/u/17784806?v=3&amp;u=6d751307077c1c047027e44008cef79294fe978c&amp;s=400" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">刘七七</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">程序媛</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/liujinhuan" title="github"><i class="icon-github"></i></a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1005053155918653/home?from=page_100505&mod=TAB&is_all=1#place" title="weibo"><i class="icon-weibo"></i></a>
+			        
+						<a class="mail" target="_blank" href="mailto:1239245052@qq.com" title="mail"><i class="icon-mail"></i></a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-XSS攻击学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      XSS攻击学习笔记
+    </h1>
+  
+
+        <a href="/2017/04/27/XSS攻击学习笔记/" class="archive-article-date">
+  	<time datetime="2017-04-27T10:15:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-27</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>最近的一次面试题中，有问到XSSE和CSRF。表示当时只知道学名，是“攻击”的意思。。。后来在慕课网中看到一位老师的视频，觉得还不错，就动手跟着学习起来。整理的学习笔记如下。项目源码会在后面贴出，请叫我雷锋~~</p>
+</blockquote>
+<h3 id="XSS的攻击方式"><a href="#XSS的攻击方式" class="headerlink" title="XSS的攻击方式"></a>XSS的攻击方式</h3><ul>
+<li>反射型</li>
+</ul>
+<blockquote>
+<p>发出请求是,XSS代码出现在URL中,作为输入提交到服务器端,服务器端解析后响应,XSS代码随着响应内容一起传回浏览器,最后浏览器解析执行XSS代码。这个过程像一次反射,故叫做反射型XSS。</p>
+</blockquote>
+<ul>
+<li>存储型</li>
+</ul>
+<blockquote>
+<p>存储型XSS和反射型XSS的差别在于,提交的代码会存储在服务器中(例如数据库,内存,文件系统等),下次请求页面是不用再提交XSS代码。</p>
+</blockquote>
+<h3 id="XSS的防御"><a href="#XSS的防御" class="headerlink" title="XSS的防御"></a>XSS的防御</h3><a id="more"></a>
+<ul>
+<li>编码：对传递的数据进行编码转义，该操作可以在后端或者前端处理</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">“	----&gt;   &amp;quot; </div><div class="line">&amp;	----&gt;   &amp;amp;</div><div class="line">&lt;	----&gt;   &amp;lt;</div><div class="line">&gt;	----&gt;   &amp;gt;</div><div class="line">不间断的空格	----&gt;   &amp;nbsp;</div></pre></td></tr></table></figure>
+<ul>
+<li>过滤：移除掉数据中不合法的元素，标签，属性等</li>
+</ul>
+<blockquote>
+<p>移除用户上传到dom属性。如img的onerror属性，可以出发xss攻击。<br>移除用户上传的style，iframe，script节点</p>
+</blockquote>
+<ul>
+<li>校正</li>
+</ul>
+<p>(1)避免直接对html entity解码</p>
+<blockquote>
+<p>在 HTML 中，某些字符是预留的。在 HTML 中不能使用小于号（&lt;）和大于号（&gt;），这是因为浏览器会误认为它们是标签。如果希望正确地显示预留字符，我们必须在 HTML 源代码中使用字符实体（character entities）。HTML 中的常用字符实体是不间断空格(&nbsp;)。</p>
+</blockquote>
+<p>(2)使用dom parse转换，校正不匹配的标签</p>
+<blockquote>
+<p>对匹配到的标签，属性等进行过滤</p>
+</blockquote>
+<p>(3)示例代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 解码</span></div><div class="line">HTMLParser(he.unescape(s,&#123;<span class="attr">strict</span>:<span class="literal">true</span>&#125;),&#123;</div><div class="line">	<span class="attr">start</span>:<span class="function"><span class="keyword">function</span>(<span class="params">tag,attrs,unary</span>)</span>&#123;</div><div class="line">        <span class="comment">// 过滤不合法的标签</span></div><div class="line">        <span class="keyword">if</span>(tag==<span class="string">'script'</span>||tag==<span class="string">'style'</span>||tag==<span class="string">'link'</span>||tag==<span class="string">'iframe'</span>||tag==<span class="string">'frame'</span>)<span class="keyword">return</span>;</div><div class="line">        results += <span class="string">'&lt;'</span>+tag;</div><div class="line">        <span class="comment">// 这里过滤掉全部的属性，实际中可根据需要有选择性的替换</span></div><div class="line">        <span class="comment">// for(var i=0,len=attrs.length;i&lt;len;i++)&#123;</span></div><div class="line">        <span class="comment">//     results += " "+attrs[i].name+'="'+attrs[i].escaped+'"';</span></div><div class="line">        <span class="comment">// &#125;</span></div><div class="line">        results += (unary?<span class="string">"/"</span>:<span class="string">""</span>)+<span class="string">"&gt;"</span>;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">end</span>:<span class="function"><span class="keyword">function</span>(<span class="params">tag</span>)</span>&#123;</div><div class="line">        results += <span class="string">"&lt;/"</span>+tag+<span class="string">"&gt;"</span>;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">chars</span>:<span class="function"><span class="keyword">function</span>(<span class="params">text</span>)</span>&#123;</div><div class="line">        results += text;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">comment</span>:<span class="function"><span class="keyword">function</span>(<span class="params">text</span>)</span>&#123;</div><div class="line">        results +=<span class="string">"&lt;!--"</span>+text+<span class="string">"--&gt;"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="XSS项目实战"><a href="#XSS项目实战" class="headerlink" title="XSS项目实战"></a>XSS项目实战</h3><p><a href="https://github.com/liujinhuan/XSS.git" target="_blank" rel="external">项目源码,叫我雷锋</a><br><a href="http://www.imooc.com/learn/812" target="_blank" rel="external">Web安全-XSS</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XSS/">XSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ejs/">ejs</a></li></ul>
+	</div>
+
+      
+
+      
+
+      
+        <div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode"></div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/04/24/MongoDB的增删改查/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MongoDB的增删改查</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 刘七七
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/MAC/" style="font-size: 15px;">MAC</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/MongoDB/" style="font-size: 20px;">MongoDB</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a>
+    			</div>
+    	</section>
+    
+
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">一匹来自北方的浪&lt;br/&gt;崇尚自由&lt;br/&gt;无拘无束</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
