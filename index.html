@@ -155,9 +155,22 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>init</p>
+<p>最近的一次面试题中，有问到XSSE和CSRF。宝宝表示当时只知道学名，是“攻击”的意思。。。后来在慕课网中看到一位老师的视频，觉得还不错，就动手跟着学习起来。整理的学习笔记如下。项目源码会在后面贴出，请叫我雷锋~~</p>
 </blockquote>
-
+<h3 id="XSS的攻击方式"><a href="#XSS的攻击方式" class="headerlink" title="XSS的攻击方式"></a>XSS的攻击方式</h3><ul>
+<li>反射型</li>
+</ul>
+<blockquote>
+<p>发出请求是,XSS代码出现在URL中,作为输入提交到服务器端,服务器端解析后响应,XSS代码随着响应内容一起传回浏览器,最后浏览器解析执行XSS代码。这个过程像一次反射,故叫做反射型XSS。</p>
+</blockquote>
+<ul>
+<li>存储型</li>
+</ul>
+<blockquote>
+<p>存储型XSS和反射型XSS的差别在于,提交的代码会存储在服务器中(例如数据库,内存,文件系统等),下次请求页面是不用再提交XSS代码。</p>
+</blockquote>
+<h3 id="XSS的防御"><a href="#XSS的防御" class="headerlink" title="XSS的防御"></a>XSS的防御</h3>
+        <a class="article-more-a"  href="/2017/04/27/XSS攻击学习笔记/#more">more >></a>
       
 
       
@@ -221,87 +234,7 @@
 <li>出现下述所示，很好，你成功啦～可以以命令行的方式操作啦</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">MongoDB shell version: 3.2.8</div><div class="line">connecting to: test</div><div class="line">Welcome to the MongoDB shell.</div><div class="line">For interactive help, type &quot;help&quot;.</div><div class="line">For more comprehensive documentation, see</div><div class="line">http://docs.mongodb.org/</div><div class="line">Questions? Try the support group</div><div class="line">http://groups.google.com/group/mongodb-user</div><div class="line">Server has startup warnings:</div><div class="line">2016-08-02T19:16:07.239+0800 I CONTROL  [initandlisten]</div><div class="line">2016-08-02T19:16:07.239+0800 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000</div><div class="line">&gt;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li>如果你没有成功安装mongodb，你可能会出现如下的错误哦～</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">MongoDB shell version: 3.2.8</div><div class="line">connecting to: test</div><div class="line">2016-08-02T18:14:33.677+0800 W NETWORK  [thread1] Failed to connect to 127.0.0.1:27017, reason: errno:61 Connection refused</div><div class="line">2016-08-02T18:14:33.678+0800 E QUERY    [thread1] Error: couldn&apos;t connect to server 127.0.0.1:27017, connection attempt failed :</div><div class="line">connect@src/mongo/shell/mongo.js:229:14</div><div class="line">@(connect):1:6</div><div class="line"></div><div class="line">exception: connect failed</div></pre></td></tr></table></figure>
-<ul>
-<li>所以，失败的～参考上一节～在安装下～</li>
-</ul>
-<h3 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h3><p>1.数据库</p>
-<ul>
-<li>查询已有的数据库</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show dbs</div></pre></td></tr></table></figure>
-<ul>
-<li>初次安装的话，会出现如下所示的一种数据库</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">local  0.000GB</div></pre></td></tr></table></figure>
-<ul>
-<li>安装数据库</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">use 数据库名（如：test）</div></pre></td></tr></table></figure>
-<ul>
-<li>有同名数据库就切换到已有的，没有的话就会创建新的</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">switched to db test</div></pre></td></tr></table></figure>
-<p>2.集合</p>
-<ul>
-<li>创建集合</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.createCollection(&quot;集合名字：如（mycollection）&quot;)</div></pre></td></tr></table></figure>
-<ul>
-<li>结果</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123; &quot;ok&quot; : 1 &#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>查看集合</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show collections</div></pre></td></tr></table></figure>
-<ul>
-<li>结果</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mycollection（创建的集合名字）</div></pre></td></tr></table></figure>
-<p>3.增：</p>
-<ul>
-<li>insert（以集合mycollection为例）</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.mycollection.insert(&#123;name:&quot;liuqiqi&quot;&#125;)</div></pre></td></tr></table></figure>
-<ul>
-<li>结果</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">WriteResult(&#123; &quot;nInserted&quot; : 1 &#125;)</div></pre></td></tr></table></figure>
-<p>4.查：</p>
-<ul>
-<li>find（以集合mycollection为例）</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.mycollection.find().pretty()</div></pre></td></tr></table></figure>
-<ul>
-<li>结果</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57a0871725ae4f21a42b44e3&quot;), &quot;name&quot; : &quot;liuqiqi&quot; &#125;</div></pre></td></tr></table></figure>
-<p>5.改：</p>
-<ul>
-<li>update（以集合mycollection为例）。修改name是liuqiqi的为TTTTTT</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.mycollection.update(&#123;&apos;name&apos;:&apos;liuqiqi&apos;&#125;,&#123;$set:&#123;&apos;name&apos;:&apos;TTTTTT&apos;&#125;&#125;)</div></pre></td></tr></table></figure>
-<ul>
-<li>结果</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">WriteResult(&#123; &quot;nMatched&quot; : 1, &quot;nUpserted&quot; : 0, &quot;nModified&quot; : 1 &#125;)</div></pre></td></tr></table></figure>
-<p>6.删：</p>
-<ul>
-<li>remove（以集合mycollection为例）</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.mycollection.remove(&#123;&quot;name&quot;:&quot;liuqiqi&quot;&#125;)</div></pre></td></tr></table></figure>
-<ul>
-<li>结果</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">WriteResult(&#123; &quot;nRemoved&quot; : 1 &#125;)</div></pre></td></tr></table></figure>
-<h3 id="可视化操作工具"><a href="#可视化操作工具" class="headerlink" title="可视化操作工具"></a>可视化操作工具</h3><ul>
-<li>上述操作都是在终端中输入指令执行的～推荐一款可视化操作工具<a href="https://robomongo.org/" target="_blank" rel="external">Robomongo</a>～</li>
-</ul>
-
+        <a class="article-more-a"  href="/2017/04/24/MongoDB的增删改查/#more">more >></a>
       
 
       
@@ -370,37 +303,7 @@
 <li>继续输入下面指令，期间会出现约两次进度条（忘记截图）</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mongodb</div></pre></td></tr></table></figure>
-<ul>
-<li><p>输入指令，启动Mongodb</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod</div></pre></td></tr></table></figure>
-</li>
-<li><p>出现如下报错：约是说没有<code>/data/db</code>目录的。</p>
-</li>
-</ul>
-<blockquote>
-<p>2016-08-02T18:19:16.825+0800 I CONTROL  [initandlisten] MongoDB starting : pid=37113 port=27017 dbpath=/data/db 64-bit host=C02Q6N1GFVH5-3.local<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten] db version v3.2.8<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten] git version: ed70e33130c977bda0024c125b56d159573dbaf0<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2h  3 May 2016<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten] allocator: system<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten] modules: none<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten] build environment:<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten]     distarch: x86_64<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten]     target_arch: x86_64<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten] options: {}<br>2016-08-02T18:19:16.828+0800 I STORAGE  [initandlisten] exception in initAndListen: 29 Data directory /data/db not found., terminating<br>2016-08-02T18:19:16.828+0800 I CONTROL  [initandlisten] dbexit:  rc: 100</p>
-</blockquote>
-<ul>
-<li>继续输入指令，创建<code>/data/db</code>，解决上述问题。期间会出入一次开机密码</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R 用户名 /data/db</div></pre></td></tr></table></figure>
-<ul>
-<li>再次试着启动Mongodb</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod</div></pre></td></tr></table></figure>
-<ul>
-<li>waitting 27017。。。成功啦！！！</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">2016-08-02T19:16:06.621+0800 I CONTROL  [initandlisten] MongoDB starting : pid=38338 port=27017 dbpath=/data/db 64-bit host=C02Q6N1GFVH5-3.local</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten] db version v3.2.8</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten] git version: ed70e33130c977bda0024c125b56d159573dbaf0</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2h  3 May 2016</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten] allocator: system</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten] modules: none</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten] build environment:</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten]     distarch: x86_64</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten]     target_arch: x86_64</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten] options: &#123;&#125;</div><div class="line">2016-08-02T19:16:06.622+0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=4G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),</div><div class="line">2016-08-02T19:16:07.239+0800 I CONTROL  [initandlisten]</div><div class="line">2016-08-02T19:16:07.239+0800 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000</div><div class="line">2016-08-02T19:16:07.239+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory &apos;/data/db/diagnostic.data&apos;</div><div class="line">2016-08-02T19:16:07.239+0800 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker</div><div class="line">2016-08-02T19:16:07.390+0800 I NETWORK  [initandlisten] waiting for connections on port 27017</div></pre></td></tr></table></figure>
-<ul>
-<li>此时打开浏览器，输入下述地址：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://127.0.0.1:27017/</div></pre></td></tr></table></figure>
-<ul>
-<li>出现如下所示的页面也代表启动成功。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">It looks like you are trying to access MongoDB over HTTP on the native driver port.</div></pre></td></tr></table></figure>
-
+        <a class="article-more-a"  href="/2017/04/24/MongoDB的安装/#more">more >></a>
       
 
       
