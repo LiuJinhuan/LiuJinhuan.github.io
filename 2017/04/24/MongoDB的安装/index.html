@@ -14,7 +14,7 @@ HomeBrew简介与安装
 简介：就是mac上的软件包管理工具，方便安装与卸载。
 安装：打开终端，输入如下命令，期间会输入一次回车＋两次开机密码。
 
-1ruby -e &amp;quot;$(curl -fsSL https://raw.githubuserco">
+1ruby -e &quot;$(curl -fsSL https://raw.githubusercontent">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MongoDB的安装">
 <meta property="og:url" content="http://yoursite.com/2017/04/24/MongoDB的安装/index.html">
@@ -25,8 +25,8 @@ HomeBrew简介与安装
 简介：就是mac上的软件包管理工具，方便安装与卸载。
 安装：打开终端，输入如下命令，期间会输入一次回车＋两次开机密码。
 
-1ruby -e &amp;quot;$(curl -fsSL https://raw.githubuserco">
-<meta property="og:updated_time" content="2017-04-28T02:42:19.000Z">
+1ruby -e &quot;$(curl -fsSL https://raw.githubusercontent">
+<meta property="og:updated_time" content="2017-05-01T15:18:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB的安装">
 <meta name="twitter:description" content="之前一直在其他平台发布着自己的博客，现在发现GithubPages这个东东~再加上绚丽的主题~~又可以好好的装逼了。那我们撸起袖子，开始干。
@@ -35,7 +35,7 @@ HomeBrew简介与安装
 简介：就是mac上的软件包管理工具，方便安装与卸载。
 安装：打开终端，输入如下命令，期间会输入一次回车＋两次开机密码。
 
-1ruby -e &amp;quot;$(curl -fsSL https://raw.githubuserco">
+1ruby -e &quot;$(curl -fsSL https://raw.githubusercontent">
   
     <link rel="alternative" href="/atom.xml" title="刘七七的个人博客" type="application/atom+xml">
   
@@ -181,46 +181,44 @@ HomeBrew简介与安装
 <li>简介：就是mac上的软件包管理工具，方便安装与卸载。</li>
 <li>安装：打开终端，输入如下命令，期间会输入一次回车＋两次开机密码。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby -e <span class="string">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></div></pre></td></tr></table></figure>
 <h3 id="MongoDB安装"><a href="#MongoDB安装" class="headerlink" title="MongoDB安装"></a>MongoDB安装</h3><ul>
 <li>打开终端，输入下述指令</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew update</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew update</div></pre></td></tr></table></figure>
 <ul>
 <li>继续输入下面指令，期间会出现约两次进度条（忘记截图）</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mongodb</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mongodb</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <ul>
 <li><p>输入指令，启动Mongodb</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod</div></pre></td></tr></table></figure>
 </li>
 <li><p>出现如下报错：约是说没有<code>/data/db</code>目录的。</p>
 </li>
 </ul>
-<blockquote>
-<p>2016-08-02T18:19:16.825+0800 I CONTROL  [initandlisten] MongoDB starting : pid=37113 port=27017 dbpath=/data/db 64-bit host=C02Q6N1GFVH5-3.local<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten] db version v3.2.8<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten] git version: ed70e33130c977bda0024c125b56d159573dbaf0<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2h  3 May 2016<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten] allocator: system<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten] modules: none<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten] build environment:<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten]     distarch: x86_64<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten]     target_arch: x86_64<br>2016-08-02T18:19:16.826+0800 I CONTROL  [initandlisten] options: {}<br>2016-08-02T18:19:16.828+0800 I STORAGE  [initandlisten] exception in initAndListen: 29 Data directory /data/db not found., terminating<br>2016-08-02T18:19:16.828+0800 I CONTROL  [initandlisten] dbexit:  rc: 100</p>
-</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T18:<span class="number">19</span>:<span class="number">16.825</span>+<span class="number">0800</span> I CONTROL  [initandlisten] MongoDB starting : pid=<span class="number">37113</span> port=<span class="number">27017</span> dbpath=<span class="regexp">/data/</span>db <span class="number">64</span>-bit host=C02Q6N1GFVH5<span class="number">-3.</span>local</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T18:<span class="number">19</span>:<span class="number">16.826</span>+<span class="number">0800</span> I CONTROL  [initandlisten] db version v3<span class="number">.2</span><span class="number">.8</span></div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T18:<span class="number">19</span>:<span class="number">16.826</span>+<span class="number">0800</span> I CONTROL  [initandlisten] git version: ed70e33130c977bda0024c125b56d159573dbaf0</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T18:<span class="number">19</span>:<span class="number">16.826</span>+<span class="number">0800</span> I CONTROL  [initandlisten] OpenSSL version: OpenSSL <span class="number">1.0</span><span class="number">.2</span>h  <span class="number">3</span> May <span class="number">2016</span></div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T18:<span class="number">19</span>:<span class="number">16.826</span>+<span class="number">0800</span> I CONTROL  [initandlisten] allocator: system</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T18:<span class="number">19</span>:<span class="number">16.826</span>+<span class="number">0800</span> I CONTROL  [initandlisten] modules: none</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T18:<span class="number">19</span>:<span class="number">16.826</span>+<span class="number">0800</span> I CONTROL  [initandlisten] build environment:</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T18:<span class="number">19</span>:<span class="number">16.826</span>+<span class="number">0800</span> I CONTROL  [initandlisten]     distarch: x86_64</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T18:<span class="number">19</span>:<span class="number">16.826</span>+<span class="number">0800</span> I CONTROL  [initandlisten]     target_arch: x86_64</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T18:<span class="number">19</span>:<span class="number">16.826</span>+<span class="number">0800</span> I CONTROL  [initandlisten] options: &#123;&#125;</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T18:<span class="number">19</span>:<span class="number">16.828</span>+<span class="number">0800</span> I STORAGE  [initandlisten] exception <span class="keyword">in</span> initAndListen: <span class="number">29</span> Data directory /data/db not found., terminating</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T18:<span class="number">19</span>:<span class="number">16.828</span>+<span class="number">0800</span> I CONTROL  [initandlisten] dbexit:  rc: <span class="number">100</span></div></pre></td></tr></table></figure>
 <ul>
 <li>继续输入指令，创建<code>/data/db</code>，解决上述问题。期间会出入一次开机密码</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R 用户名 /data/db</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R 用户名 /data/db</div></pre></td></tr></table></figure>
 <ul>
 <li>再次试着启动Mongodb</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod</div></pre></td></tr></table></figure>
 <ul>
 <li>waitting 27017。。。成功啦！！！</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">2016-08-02T19:16:06.621+0800 I CONTROL  [initandlisten] MongoDB starting : pid=38338 port=27017 dbpath=/data/db 64-bit host=C02Q6N1GFVH5-3.local</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten] db version v3.2.8</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten] git version: ed70e33130c977bda0024c125b56d159573dbaf0</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2h  3 May 2016</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten] allocator: system</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten] modules: none</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten] build environment:</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten]     distarch: x86_64</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten]     target_arch: x86_64</div><div class="line">2016-08-02T19:16:06.622+0800 I CONTROL  [initandlisten] options: &#123;&#125;</div><div class="line">2016-08-02T19:16:06.622+0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=4G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),</div><div class="line">2016-08-02T19:16:07.239+0800 I CONTROL  [initandlisten]</div><div class="line">2016-08-02T19:16:07.239+0800 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000</div><div class="line">2016-08-02T19:16:07.239+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory &apos;/data/db/diagnostic.data&apos;</div><div class="line">2016-08-02T19:16:07.239+0800 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker</div><div class="line">2016-08-02T19:16:07.390+0800 I NETWORK  [initandlisten] waiting for connections on port 27017</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">06.621</span>+<span class="number">0800</span> I CONTROL  [initandlisten] MongoDB starting : pid=<span class="number">38338</span> port=<span class="number">27017</span> dbpath=<span class="regexp">/data/</span>db <span class="number">64</span>-bit host=C02Q6N1GFVH5<span class="number">-3.</span>local</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">06.622</span>+<span class="number">0800</span> I CONTROL  [initandlisten] db version v3<span class="number">.2</span><span class="number">.8</span></div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">06.622</span>+<span class="number">0800</span> I CONTROL  [initandlisten] git version: ed70e33130c977bda0024c125b56d159573dbaf0</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">06.622</span>+<span class="number">0800</span> I CONTROL  [initandlisten] OpenSSL version: OpenSSL <span class="number">1.0</span><span class="number">.2</span>h  <span class="number">3</span> May <span class="number">2016</span></div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">06.622</span>+<span class="number">0800</span> I CONTROL  [initandlisten] allocator: system</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">06.622</span>+<span class="number">0800</span> I CONTROL  [initandlisten] modules: none</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">06.622</span>+<span class="number">0800</span> I CONTROL  [initandlisten] build environment:</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">06.622</span>+<span class="number">0800</span> I CONTROL  [initandlisten]     distarch: x86_64</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">06.622</span>+<span class="number">0800</span> I CONTROL  [initandlisten]     target_arch: x86_64</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">06.622</span>+<span class="number">0800</span> I CONTROL  [initandlisten] options: &#123;&#125;</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">06.622</span>+<span class="number">0800</span> I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=<span class="number">4</span>G,session_max=<span class="number">20000</span>,eviction=(threads_max=<span class="number">4</span>),config_base=<span class="literal">false</span>,statistics=(fast),log=(enabled=<span class="literal">true</span>,archive=<span class="literal">true</span>,path=journal,compressor=snappy),file_manager=(close_idle_time=<span class="number">100000</span>),checkpoint=(wait=<span class="number">60</span>,log_size=<span class="number">2</span>GB),statistics_log=(wait=<span class="number">0</span>),</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">07.239</span>+<span class="number">0800</span> I CONTROL  [initandlisten]</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">07.239</span>+<span class="number">0800</span> I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number <span class="keyword">of</span> files is <span class="number">256</span>, should be at least <span class="number">1000</span></div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">07.239</span>+<span class="number">0800</span> I FTDC     [initandlisten] Initializing full-time diagnostic data capture <span class="keyword">with</span> directory <span class="string">'/data/db/diagnostic.data'</span></div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">07.239</span>+<span class="number">0800</span> I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">07.390</span>+<span class="number">0800</span> I NETWORK  [initandlisten] waiting <span class="keyword">for</span> connections on port <span class="number">27017</span></div></pre></td></tr></table></figure>
 <ul>
 <li>此时打开浏览器，输入下述地址：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://127.0.0.1:27017/</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http:<span class="comment">//127.0.0.1:27017/</span></div></pre></td></tr></table></figure>
 <ul>
 <li>出现如下所示的页面也代表启动成功。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">It looks like you are trying to access MongoDB over HTTP on the native driver port.</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">It looks like you are trying to access MongoDB over HTTP on the native driver port.</div></pre></td></tr></table></figure>
 
       
 
@@ -231,7 +229,7 @@ HomeBrew简介与安装
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MAC/">MAC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li></ul>
 	</div>
 
       
@@ -305,11 +303,6 @@ HomeBrew简介与安装
     </a>
   
   
-    <a href="/2017/04/24/MongoDB的实战/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Node下MongoDB的实战</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
 </nav>
 
 
@@ -375,7 +368,7 @@ HomeBrew简介与安装
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/MAC/" style="font-size: 15px;">MAC</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/MongoDB/" style="font-size: 20px;">MongoDB</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a>
+    				<a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Mac/" style="font-size: 20px;">Mac</a> <a href="/tags/MongoDB/" style="font-size: 20px;">MongoDB</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a>
     			</div>
     	</section>
     
@@ -385,7 +378,7 @@ HomeBrew简介与安装
     
     	<section class="tools-section tools-section-me">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">一匹来自北方的浪&lt;br/&gt;崇尚自由&lt;br/&gt;无拘无束</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">程序媛&lt;br/&gt;黑龙江的狼&lt;br/&gt;逗比&lt;br/&gt;</div>
   	  	
     	</section>
     

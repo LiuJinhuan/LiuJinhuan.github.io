@@ -136,6 +136,68 @@
       <div class="body-wrap">
         
   
+    <article id="post-MongoDB的实战" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/01/MongoDB的实战/">Node下MongoDB的实战</a>
+    </h1>
+  
+
+        <a href="/2017/05/01/MongoDB的实战/" class="archive-article-date">
+  	<time datetime="2017-05-01T14:52:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-01</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>在听陈鸿宇的《理想三旬》。好听～</p>
+</blockquote>
+<p>上两篇博文中提到了在Mac下MongoDB的安装与连接，这次我们来看看如何在Node命令行的形式下，操MongoDB<br>PS：本文中的数据集合采用上篇博文中“test”库中的“mycollection”。</p>
+<h3 id="安装MongoDB包"><a href="#安装MongoDB包" class="headerlink" title="安装MongoDB包"></a>安装MongoDB包</h3><ul>
+<li>使用Node中的mongodb模块，需要先安装哦～打开终端，输入如下命令～</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install mongodb</div></pre></td></tr></table></figure>
+<h3 id="数据库的链接与断开"><a href="#数据库的链接与断开" class="headerlink" title="数据库的链接与断开"></a>数据库的链接与断开</h3>
+        <a class="article-more-a"  href="/2017/05/01/MongoDB的实战/#more">more >></a>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/01/MongoDB的实战/#more">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-XSS攻击学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -180,7 +242,7 @@
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XSS/">XSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ejs/">ejs</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XSS/">XSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ejs/">ejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
 	</div>
 
       
@@ -229,11 +291,11 @@
 <h3 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h3><ul>
 <li>前面一节我们安装了ManogoDB，如果你成功安装了的话～那么，新开终端，输入下述指令进行连接。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongo</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongo</div></pre></td></tr></table></figure>
 <ul>
 <li>出现下述所示，很好，你成功啦～可以以命令行的方式操作啦</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">MongoDB shell version: 3.2.8</div><div class="line">connecting to: test</div><div class="line">Welcome to the MongoDB shell.</div><div class="line">For interactive help, type &quot;help&quot;.</div><div class="line">For more comprehensive documentation, see</div><div class="line">http://docs.mongodb.org/</div><div class="line">Questions? Try the support group</div><div class="line">http://groups.google.com/group/mongodb-user</div><div class="line">Server has startup warnings:</div><div class="line">2016-08-02T19:16:07.239+0800 I CONTROL  [initandlisten]</div><div class="line">2016-08-02T19:16:07.239+0800 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000</div><div class="line">&gt;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">MongoDB shell version: <span class="number">3.2</span><span class="number">.8</span></div><div class="line">connecting to: test</div><div class="line">Welcome to the MongoDB shell.</div><div class="line">For interactive help, type <span class="string">"help"</span>.</div><div class="line">For more comprehensive documentation, see</div><div class="line">http:<span class="comment">//docs.mongodb.org/</span></div><div class="line">Questions? Try the support group</div><div class="line">http:<span class="comment">//groups.google.com/group/mongodb-user</span></div><div class="line">Server has startup warnings:</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">07.239</span>+<span class="number">0800</span> I CONTROL  [initandlisten]</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">07.239</span>+<span class="number">0800</span> I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number <span class="keyword">of</span> files is <span class="number">256</span>, should be at least <span class="number">1000</span></div><div class="line">&gt;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
         <a class="article-more-a"  href="/2017/04/24/MongoDB的增删改查/#more">more >></a>
       
 
@@ -244,7 +306,7 @@
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MAC/">MAC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li></ul>
 	</div>
 
       
@@ -294,15 +356,15 @@
 <li>简介：就是mac上的软件包管理工具，方便安装与卸载。</li>
 <li>安装：打开终端，输入如下命令，期间会输入一次回车＋两次开机密码。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby -e <span class="string">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></div></pre></td></tr></table></figure>
 <h3 id="MongoDB安装"><a href="#MongoDB安装" class="headerlink" title="MongoDB安装"></a>MongoDB安装</h3><ul>
 <li>打开终端，输入下述指令</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew update</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew update</div></pre></td></tr></table></figure>
 <ul>
 <li>继续输入下面指令，期间会出现约两次进度条（忘记截图）</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mongodb</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mongodb</div></pre></td></tr></table></figure>
         <a class="article-more-a"  href="/2017/04/24/MongoDB的安装/#more">more >></a>
       
 
@@ -313,7 +375,7 @@
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MAC/">MAC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li></ul>
 	</div>
 
       
@@ -321,60 +383,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/04/24/MongoDB的安装/#more">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-MongoDB的实战" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/24/MongoDB的实战/">Node下MongoDB的实战</a>
-    </h1>
-  
-
-        <a href="/2017/04/24/MongoDB的实战/" class="archive-article-date">
-  	<time datetime="2017-04-24T08:00:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-24</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>未完待续~~</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/24/MongoDB的实战/#more">展开全文 >></a>
         </p>
       
 
@@ -450,7 +458,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/MAC/" style="font-size: 15px;">MAC</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/MongoDB/" style="font-size: 20px;">MongoDB</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a>
+    				<a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Mac/" style="font-size: 20px;">Mac</a> <a href="/tags/MongoDB/" style="font-size: 20px;">MongoDB</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a>
     			</div>
     	</section>
     
@@ -460,7 +468,7 @@
     
     	<section class="tools-section tools-section-me">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">一匹来自北方的浪&lt;br/&gt;崇尚自由&lt;br/&gt;无拘无束</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">程序媛&lt;br/&gt;黑龙江的狼&lt;br/&gt;逗比&lt;br/&gt;</div>
   	  	
     	</section>
     
