@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  <title>基于Vue+iView+Koa+Mongodb的后台管理系统--客户端 | 刘七七的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="经过6天的奋战，一个后台管理系统已经新鲜出炉了。感觉主要是闲的蛋疼。没事瞎搞。哈哈。
+
+记得在上一篇博客的尾巴中，承诺大家要做一个前后台通杀的小系统，以在实际的项目中运用。话不多说~开始吧。
+前言
+项目来源于大学的毕业设计，仅在实现CURD功能。其中，个别例子存在不合理之处(如：用户密码明文展示在表格中等)，请自行忽略，不要较真儿哦~
+
+项目及技术介绍
+该管理系统主要包括登录、图书管理、用户管理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于Vue+iView+Koa+Mongodb的后台管理系统--客户端">
+<meta property="og:url" content="http://yoursite.com/2017/05/16/基于Vue+iView+Koa的管理系统实现/index.html">
+<meta property="og:site_name" content="刘七七的个人博客">
+<meta property="og:description" content="经过6天的奋战，一个后台管理系统已经新鲜出炉了。感觉主要是闲的蛋疼。没事瞎搞。哈哈。
+
+记得在上一篇博客的尾巴中，承诺大家要做一个前后台通杀的小系统，以在实际的项目中运用。话不多说~开始吧。
+前言
+项目来源于大学的毕业设计，仅在实现CURD功能。其中，个别例子存在不合理之处(如：用户密码明文展示在表格中等)，请自行忽略，不要较真儿哦~
+
+项目及技术介绍
+该管理系统主要包括登录、图书管理、用户管理">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/login.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/home.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/booklist.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookadd.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookupdate.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookdetail.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookdelete.png">
+<meta property="og:updated_time" content="2017-05-17T03:10:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于Vue+iView+Koa+Mongodb的后台管理系统--客户端">
+<meta name="twitter:description" content="经过6天的奋战，一个后台管理系统已经新鲜出炉了。感觉主要是闲的蛋疼。没事瞎搞。哈哈。
+
+记得在上一篇博客的尾巴中，承诺大家要做一个前后台通杀的小系统，以在实际的项目中运用。话不多说~开始吧。
+前言
+项目来源于大学的毕业设计，仅在实现CURD功能。其中，个别例子存在不合理之处(如：用户密码明文展示在表格中等)，请自行忽略，不要较真儿哦~
+
+项目及技术介绍
+该管理系统主要包括登录、图书管理、用户管理">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/1.png">
+  
+    <link rel="alternative" href="/atom.xml" title="刘七七的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="https://avatars1.githubusercontent.com/u/17784806?v=3&amp;u=6d751307077c1c047027e44008cef79294fe978c&amp;s=400" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">刘七七</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">程序媛</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/liujinhuan" title="github"><i class="icon-github"></i></a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/p/1005053155918653/home?from=page_100505&mod=TAB&is_all=1#place" title="weibo"><i class="icon-weibo"></i></a>
+		        
+					<a class="mail" target="_blank" href="mailto:1239245052@qq.com" title="mail"><i class="icon-mail"></i></a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-sort"></i></div>
+  		<h1 class="header-author js-mobile-header hide">刘七七</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="https://avatars1.githubusercontent.com/u/17784806?v=3&amp;u=6d751307077c1c047027e44008cef79294fe978c&amp;s=400" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">刘七七</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">程序媛</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/liujinhuan" title="github"><i class="icon-github"></i></a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1005053155918653/home?from=page_100505&mod=TAB&is_all=1#place" title="weibo"><i class="icon-weibo"></i></a>
+			        
+						<a class="mail" target="_blank" href="mailto:1239245052@qq.com" title="mail"><i class="icon-mail"></i></a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-基于Vue+iView+Koa的管理系统实现" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      基于Vue+iView+Koa+Mongodb的后台管理系统--客户端
+    </h1>
+  
+
+        <a href="/2017/05/16/基于Vue+iView+Koa的管理系统实现/" class="archive-article-date">
+  	<time datetime="2017-05-16T14:17:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-16</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>经过6天的奋战，一个后台管理系统已经新鲜出炉了。感觉主要是闲的蛋疼。没事瞎搞。哈哈。</p>
+</blockquote>
+<p>记得在<a href="https://liujinhuan.github.io/2017/05/01/MongoDB%E7%9A%84%E5%AE%9E%E6%88%98/#more" target="_blank" rel="external">上一篇博客</a>的尾巴中，承诺大家要做一个前后台通杀的小系统，以在实际的项目中运用。话不多说~开始吧。</p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>项目来源于大学的毕业设计，仅在实现CURD功能。其中，个别例子存在不合理之处(如：用户密码明文展示在表格中等)，请自行忽略，不要较真儿哦~</p>
+</blockquote>
+<h3 id="项目及技术介绍"><a href="#项目及技术介绍" class="headerlink" title="项目及技术介绍"></a>项目及技术介绍</h3><blockquote>
+<p>该管理系统主要包括登录、图书管理、用户管理三个部分。可以实现图书与用户的CURD操作。其中admin用户属于管理员，可以操作用户管理，而其余用户则只能操作图书管理。具体的角色权限关系还未考虑在其中，感兴趣的同学，可以自行添加。</p>
+</blockquote>
+<a id="more"></a>
+<ul>
+<li>client</li>
+</ul>
+<p>整体采用Vue框架。通过<code>vue-cli</code>脚手架工具生成前端基本项目目录，通过<code>vue-router</code>组件实现单页面路由，通过<code>vue-resource</code>实现数据请求的发送，通过<code>iView</code>前端UI框架实现页面的展示。</p>
+<ul>
+<li>server</li>
+</ul>
+<p>整体采用Koa框架。通过<code>generator-koa2-rest</code>脚手架工具生成后端基本项目目录，通过<code>mongoose</code>中间件完成和数据库的链接，通过<code>koa-router</code>中间件实现接口的路由，通过<code>koa-bodyparser</code>中间件获取用户的请求参数，通过<code>koa-cors</code>中间件解决跨域请求。</p>
+<h3 id="Client搭建"><a href="#Client搭建" class="headerlink" title="Client搭建"></a>Client搭建</h3><ul>
+<li>全局安装 vue-cli</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --global vue-cli</div></pre></td></tr></table></figure>
+<ul>
+<li>创建一个基于 webpack 模板的新项目</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vue init webpack client(目录名称)</div></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/1.png" alt="基于 webpack 模板的新项目"></p>
+<ul>
+<li>安装依赖及运行</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd client &amp;&amp; npm install &amp;&amp; npm run dev</div></pre></td></tr></table></figure>
+<ul>
+<li>安装iView</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install iview --save</div></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/2.png" alt="安装iView"></p>
+<ul>
+<li>在 webpack 入口页面 main.js 中配置iView：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> iView <span class="keyword">from</span> <span class="string">'iview'</span></div><div class="line"><span class="keyword">import</span> <span class="string">'iview/dist/styles/iview.css'</span>   <span class="comment">// 使用 CSS</span></div><div class="line"></div><div class="line">Vue.use(iView);			<span class="comment">//引用iView组件</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p>具体使用可参照<a href="https://www.iviewui.com/" target="_blank" rel="external">iView官网API</a>在vue文件中进行引用和操作等。</p>
+</li>
+<li><p>引入vue-resource和vue-router组件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> VueResource <span class="keyword">from</span> <span class="string">'vue-resource'</span></div><div class="line">Vue.use(VueResource)</div><div class="line"></div><div class="line"><span class="keyword">import</span> Router <span class="keyword">from</span> <span class="string">'vue-router'</span></div><div class="line">Vue.use(Router)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="过程记录"><a href="#过程记录" class="headerlink" title="过程记录"></a>过程记录</h3><ul>
+<li><p>各技术栈的官网还是要提前看一下，不然撸起代码都不顺畅。</p>
+</li>
+<li><p>路由：创建完模块页面之后，在router/index.js中记得导入和配置路由。</p>
+</li>
+<li>子路由：后期的路由部分做了比较大的调整，主要为了解决引入菜单栏后，目标页面无法显示在内容区的问题。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</div><div class="line">  <span class="attr">mode</span>: <span class="string">'history'</span>, <span class="comment">// 指定路由采用history方式</span></div><div class="line">  routes: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">path</span>: <span class="string">'/home'</span>,</div><div class="line">      <span class="attr">name</span>: <span class="string">'home'</span>,</div><div class="line">      <span class="attr">component</span>: Home,</div><div class="line">      <span class="attr">children</span>: [ <span class="comment">//如下路由均为home的子路由,使其可以显示在home的路由之下</span></div><div class="line">        &#123;</div><div class="line">          <span class="attr">path</span>: <span class="string">'/'</span>,</div><div class="line">          <span class="attr">name</span>: <span class="string">'home'</span>,</div><div class="line">          <span class="attr">component</span>: BookList</div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">          <span class="attr">path</span>: <span class="string">'/booklist'</span>,</div><div class="line">          <span class="attr">name</span>: <span class="string">'booklist'</span>,</div><div class="line">          <span class="attr">component</span>: BookList</div><div class="line">        &#125;,</div><div class="line">        。。。。。。<span class="comment">// 省略号</span></div><div class="line">        &#123; </div><div class="line">          <span class="attr">path</span>: <span class="string">'/userdetail'</span>, </div><div class="line">          <span class="attr">name</span>: <span class="string">'userdetail'</span>,</div><div class="line">          <span class="attr">component</span>: UserDetail</div><div class="line">        &#125;</div><div class="line">      ]</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      <span class="attr">path</span>: <span class="string">'/'</span>,</div><div class="line">      <span class="attr">name</span>: <span class="string">'login'</span>,</div><div class="line">      <span class="attr">component</span>: Login</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>请求的发送：采用引入<code>vue-resource</code>来触发http请求。如：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$http.post/get(Url地址,入参).then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</div><div class="line">    response	<span class="comment">// 成功接口返回值</span></div><div class="line">&#125;, response =&gt; &#123;</div><div class="line">    response	<span class="comment">// 失败接口返回值</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>页面跳转：采用<code>vue-router</code>进行单页面路由</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$router.go(<span class="number">-1</span>);    <span class="comment">// 后退页面</span></div><div class="line"><span class="keyword">this</span>.$router.push(&#123; <span class="attr">name</span>: <span class="string">'bookdetail'</span> , <span class="attr">query</span>: &#123; <span class="attr">bookid</span>: <span class="keyword">this</span>.data[index]._id &#125;&#125;);		<span class="comment">// 参数在url的页面跳转</span></div><div class="line"><span class="keyword">this</span>.$router.push(&#123; <span class="attr">name</span>: <span class="string">'bookupdate'</span>, <span class="attr">params</span>: &#123; <span class="attr">book</span>:updateBook &#125;&#125;);	<span class="comment">// 参数在body中的页面跳转</span></div><div class="line"><span class="keyword">this</span>.$router.push(&#123;<span class="attr">name</span>:<span class="string">'bookadd'</span>&#125;);	<span class="comment">// 不带参数的跳转</span></div></pre></td></tr></table></figure>
+<ul>
+<li>工具类：该项目有store本地存储和url请求地址两个工具类，引用时注意路径。后在<code>webpack.base.conf.js</code>中发现<code>@</code>路径代表的就是当前根目录<code>src</code>，所以可直接如下方式引用</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Store <span class="keyword">from</span> <span class="string">'@/utils/store'</span></div><div class="line"><span class="keyword">import</span> Url <span class="keyword">from</span> <span class="string">'@/utils/url'</span></div></pre></td></tr></table></figure>
+<h3 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h3><ul>
+<li>登录<br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/login.png" alt="Login"></li>
+<li>home主页<br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/home.png" alt="home"></li>
+<li>图书列表的请求<br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/booklist.png" alt="booklist"></li>
+<li>图书的添加<br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookadd.png" alt="bookadd"></li>
+<li>图书的修改<br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookupdate.png" alt="bookupdate"></li>
+<li>图书的详情<br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookdetail.png" alt="bookdetail"></li>
+<li>图书的删除<br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookdelete.png" alt="bookdelete"></li>
+</ul>
+<blockquote>
+<p>有种喜悦叫做从无到有。Server端的博客后续推出~敬请期待。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Koa/">Koa</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mongodb/">Mongodb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iView/">iView</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/koa-router/">koa-router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-resource/">vue-resource</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-router/">vue-router</a></li></ul>
+	</div>
+
+      
+
+      
+
+      
+        <div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode"></div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/05/01/MongoDB的实战/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Node下MongoDB的实战</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 刘七七
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Koa/" style="font-size: 10px;">Koa</a> <a href="/tags/Mac/" style="font-size: 20px;">Mac</a> <a href="/tags/MongoDB/" style="font-size: 20px;">MongoDB</a> <a href="/tags/Mongodb/" style="font-size: 10px;">Mongodb</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/iView/" style="font-size: 10px;">iView</a> <a href="/tags/koa-router/" style="font-size: 10px;">koa-router</a> <a href="/tags/vue-resource/" style="font-size: 10px;">vue-resource</a> <a href="/tags/vue-router/" style="font-size: 10px;">vue-router</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a>
+    			</div>
+    	</section>
+    
+
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">程序媛&lt;br/&gt;黑龙江的狼&lt;br/&gt;逗比&lt;br/&gt;</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

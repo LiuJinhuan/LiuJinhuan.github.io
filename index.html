@@ -136,6 +136,69 @@
       <div class="body-wrap">
         
   
+    <article id="post-基于Vue+iView+Koa的管理系统实现" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/16/基于Vue+iView+Koa的管理系统实现/">基于Vue+iView+Koa+Mongodb的后台管理系统--客户端</a>
+    </h1>
+  
+
+        <a href="/2017/05/16/基于Vue+iView+Koa的管理系统实现/" class="archive-article-date">
+  	<time datetime="2017-05-16T14:17:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-16</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>经过6天的奋战，一个后台管理系统已经新鲜出炉了。感觉主要是闲的蛋疼。没事瞎搞。哈哈。</p>
+</blockquote>
+<p>记得在<a href="https://liujinhuan.github.io/2017/05/01/MongoDB%E7%9A%84%E5%AE%9E%E6%88%98/#more">上一篇博客</a>的尾巴中，承诺大家要做一个前后台通杀的小系统，以在实际的项目中运用。话不多说~开始吧。</p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>项目来源于大学的毕业设计，仅在实现CURD功能。其中，个别例子存在不合理之处(如：用户密码明文展示在表格中等)，请自行忽略，不要较真儿哦~</p>
+</blockquote>
+<h3 id="项目及技术介绍"><a href="#项目及技术介绍" class="headerlink" title="项目及技术介绍"></a>项目及技术介绍</h3><blockquote>
+<p>该管理系统主要包括登录、图书管理、用户管理三个部分。可以实现图书与用户的CURD操作。其中admin用户属于管理员，可以操作用户管理，而其余用户则只能操作图书管理。具体的角色权限关系还未考虑在其中，感兴趣的同学，可以自行添加。</p>
+</blockquote>
+        <a class="article-more-a"  href="/2017/05/16/基于Vue+iView+Koa的管理系统实现/#more">more >></a>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Koa/">Koa</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mongodb/">Mongodb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iView/">iView</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/koa-router/">koa-router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-resource/">vue-resource</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-router/">vue-router</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/16/基于Vue+iView+Koa的管理系统实现/#more">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-MongoDB的实战" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -242,7 +305,7 @@
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XSS/">XSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ejs/">ejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XSS/">XSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ejs/">ejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web安全/">web安全</a></li></ul>
 	</div>
 
       
@@ -458,7 +521,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Mac/" style="font-size: 20px;">Mac</a> <a href="/tags/MongoDB/" style="font-size: 20px;">MongoDB</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a>
+    				<a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Koa/" style="font-size: 10px;">Koa</a> <a href="/tags/Mac/" style="font-size: 20px;">Mac</a> <a href="/tags/MongoDB/" style="font-size: 20px;">MongoDB</a> <a href="/tags/Mongodb/" style="font-size: 10px;">Mongodb</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/iView/" style="font-size: 10px;">iView</a> <a href="/tags/koa-router/" style="font-size: 10px;">koa-router</a> <a href="/tags/vue-resource/" style="font-size: 10px;">vue-resource</a> <a href="/tags/vue-router/" style="font-size: 10px;">vue-router</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a>
     			</div>
     	</section>
     
