@@ -448,10 +448,208 @@
 
 
   
+    <article id="post-XSS攻击学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/27/XSS攻击学习笔记/">XSS攻击学习笔记</a>
+    </h1>
+  
+
+        <a href="/2017/04/27/XSS攻击学习笔记/" class="archive-article-date">
+  	<time datetime="2017-04-27T10:15:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-27</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>最近的一次面试题中，有问到XSSE和CSRF。表示当时只知道学名，是“攻击”的意思。。。后来在慕课网中看到一位老师的视频，觉得还不错，就动手跟着学习起来。整理的学习笔记如下。项目源码会在后面贴出，请叫我雷锋~~</p>
+</blockquote>
+<h3 id="XSS的攻击方式"><a href="#XSS的攻击方式" class="headerlink" title="XSS的攻击方式"></a>XSS的攻击方式</h3><ul>
+<li>反射型</li>
+</ul>
+<blockquote>
+<p>发出请求是,XSS代码出现在URL中,作为输入提交到服务器端,服务器端解析后响应,XSS代码随着响应内容一起传回浏览器,最后浏览器解析执行XSS代码。这个过程像一次反射,故叫做反射型XSS。</p>
+</blockquote>
+<ul>
+<li>存储型</li>
+</ul>
+<blockquote>
+<p>存储型XSS和反射型XSS的差别在于,提交的代码会存储在服务器中(例如数据库,内存,文件系统等),下次请求页面是不用再提交XSS代码。</p>
+</blockquote>
+<h3 id="XSS的防御"><a href="#XSS的防御" class="headerlink" title="XSS的防御"></a>XSS的防御</h3>
+        <a class="article-more-a"  href="/2017/04/27/XSS攻击学习笔记/#more">more >></a>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XSS/">XSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ejs/">ejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web安全/">web安全</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/27/XSS攻击学习笔记/#more">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-MongoDB的增删改查" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/24/MongoDB的增删改查/">MongoDB的增删改查</a>
+    </h1>
+  
+
+        <a href="/2017/04/24/MongoDB的增删改查/" class="archive-article-date">
+  	<time datetime="2017-04-24T09:15:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-24</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>好像最近没那多鸡汤~直接开始吧~</p>
+</blockquote>
+<h3 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h3><ul>
+<li>前面一节我们安装了ManogoDB，如果你成功安装了的话～那么，新开终端，输入下述指令进行连接。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongo</div></pre></td></tr></table></figure>
+<ul>
+<li>出现下述所示，很好，你成功啦～可以以命令行的方式操作啦</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">MongoDB shell version: <span class="number">3.2</span><span class="number">.8</span></div><div class="line">connecting to: test</div><div class="line">Welcome to the MongoDB shell.</div><div class="line">For interactive help, type <span class="string">"help"</span>.</div><div class="line">For more comprehensive documentation, see</div><div class="line">http:<span class="comment">//docs.mongodb.org/</span></div><div class="line">Questions? Try the support group</div><div class="line">http:<span class="comment">//groups.google.com/group/mongodb-user</span></div><div class="line">Server has startup warnings:</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">07.239</span>+<span class="number">0800</span> I CONTROL  [initandlisten]</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T19:<span class="number">16</span>:<span class="number">07.239</span>+<span class="number">0800</span> I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number <span class="keyword">of</span> files is <span class="number">256</span>, should be at least <span class="number">1000</span></div><div class="line">&gt;</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+        <a class="article-more-a"  href="/2017/04/24/MongoDB的增删改查/#more">more >></a>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/24/MongoDB的增删改查/#more">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-MongoDB的安装" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/24/MongoDB的安装/">MongoDB的安装</a>
+    </h1>
+  
+
+        <a href="/2017/04/24/MongoDB的安装/" class="archive-article-date">
+  	<time datetime="2017-04-24T08:00:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-24</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>之前一直在其他平台发布着自己的博客，现在发现GithubPages这个东东~再加上绚丽的主题~~又可以好好的装逼了。那我们撸起袖子，开始干。</p>
+</blockquote>
+<h3 id="HomeBrew简介与安装"><a href="#HomeBrew简介与安装" class="headerlink" title="HomeBrew简介与安装"></a>HomeBrew简介与安装</h3><ul>
+<li>简介：就是mac上的软件包管理工具，方便安装与卸载。</li>
+<li>安装：打开终端，输入如下命令，期间会输入一次回车＋两次开机密码。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby -e <span class="string">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></div></pre></td></tr></table></figure>
+<h3 id="MongoDB安装"><a href="#MongoDB安装" class="headerlink" title="MongoDB安装"></a>MongoDB安装</h3><ul>
+<li>打开终端，输入下述指令</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew update</div></pre></td></tr></table></figure>
+<ul>
+<li>继续输入下面指令，期间会出现约两次进度条（忘记截图）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mongodb</div></pre></td></tr></table></figure>
+        <a class="article-more-a"  href="/2017/04/24/MongoDB的安装/#more">more >></a>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/24/MongoDB的安装/#more">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
   
 
 
