@@ -6,19 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>XSS攻击学习笔记 | 刘七七的个人博客</title>
+  <title>新Mac的装机过程 | 刘七七的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近的一次面试题中，有问到XSSE和CSRF。表示当时只知道学名，是“攻击”的意思。。。后来在慕课网中看到一位老师的视频，觉得还不错，就动手跟着学习起来。整理的学习笔记如下。项目源码会在后面贴出，请叫我雷锋~~  XSS的攻击方式 反射型   发出请求是,XSS代码出现在URL中,作为输入提交到服务器端,服务器端解析后响应,XSS代码随着响应内容一起传回浏览器,最后浏览器解析执行XSS代码。这个">
-<meta name="keywords" content="Node,XSS,Express,ejs,web安全">
+  <meta name="description" content="2017年9月11日新入职一家公司。15寸+最高配带TouchBar的Pro已经分配到了我这里。装机的过程是痛苦的，因为打开电脑后，啥也没有。那就来个记录，免得以后遗忘。  Chrome(前端开发🐶的缘故，钟爱Chrome) Safiri搜索Chrome，选择Mac下载。  微信+QQ+QQ音乐">
+<meta name="keywords" content="Mac">
 <meta property="og:type" content="article">
-<meta property="og:title" content="XSS攻击学习笔记">
-<meta property="og:url" content="http://yoursite.com/2017/04/27/XSS攻击学习笔记/index.html">
+<meta property="og:title" content="新Mac的装机过程">
+<meta property="og:url" content="http://yoursite.com/2017/09/15/新Mac的装机过程/index.html">
 <meta property="og:site_name" content="刘七七的个人博客">
-<meta property="og:description" content="最近的一次面试题中，有问到XSSE和CSRF。表示当时只知道学名，是“攻击”的意思。。。后来在慕课网中看到一位老师的视频，觉得还不错，就动手跟着学习起来。整理的学习笔记如下。项目源码会在后面贴出，请叫我雷锋~~  XSS的攻击方式 反射型   发出请求是,XSS代码出现在URL中,作为输入提交到服务器端,服务器端解析后响应,XSS代码随着响应内容一起传回浏览器,最后浏览器解析执行XSS代码。这个">
-<meta property="og:updated_time" content="2017-09-14T10:10:42.000Z">
+<meta property="og:description" content="2017年9月11日新入职一家公司。15寸+最高配带TouchBar的Pro已经分配到了我这里。装机的过程是痛苦的，因为打开电脑后，啥也没有。那就来个记录，免得以后遗忘。  Chrome(前端开发🐶的缘故，钟爱Chrome) Safiri搜索Chrome，选择Mac下载。  微信+QQ+QQ音乐">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/Install-Mac/chrome-install.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/Install-Mac/sublime-install.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/Install-Mac/iterm2-1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/Install-Mac/iterm2-2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/Install-Mac/iterm2-3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/Install-Mac/zsh-install.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/Install-Mac/zsh-show.png">
+<meta property="og:updated_time" content="2017-09-15T16:07:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XSS攻击学习笔记">
-<meta name="twitter:description" content="最近的一次面试题中，有问到XSSE和CSRF。表示当时只知道学名，是“攻击”的意思。。。后来在慕课网中看到一位老师的视频，觉得还不错，就动手跟着学习起来。整理的学习笔记如下。项目源码会在后面贴出，请叫我雷锋~~  XSS的攻击方式 反射型   发出请求是,XSS代码出现在URL中,作为输入提交到服务器端,服务器端解析后响应,XSS代码随着响应内容一起传回浏览器,最后浏览器解析执行XSS代码。这个">
+<meta name="twitter:title" content="新Mac的装机过程">
+<meta name="twitter:description" content="2017年9月11日新入职一家公司。15寸+最高配带TouchBar的Pro已经分配到了我这里。装机的过程是痛苦的，因为打开电脑后，啥也没有。那就来个记录，免得以后遗忘。  Chrome(前端开发🐶的缘故，钟爱Chrome) Safiri搜索Chrome，选择Mac下载。  微信+QQ+QQ音乐">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/Install-Mac/chrome-install.png">
   
     <link rel="alternative" href="/atom.xml" title="刘七七的个人博客" type="application/atom+xml">
   
@@ -139,63 +147,74 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-XSS攻击学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-新Mac的装机过程" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      XSS攻击学习笔记
+      新Mac的装机过程
     </h1>
   
 
-        <a href="/2017/04/27/XSS攻击学习笔记/" class="archive-article-date">
-  	<time datetime="2017-04-27T10:15:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-27</time>
+        <a href="/2017/09/15/新Mac的装机过程/" class="archive-article-date">
+  	<time datetime="2017-09-15T14:47:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-15</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>最近的一次面试题中，有问到XSSE和CSRF。表示当时只知道学名，是“攻击”的意思。。。后来在慕课网中看到一位老师的视频，觉得还不错，就动手跟着学习起来。整理的学习笔记如下。项目源码会在后面贴出，请叫我雷锋~~</p>
+<p>2017年9月11日新入职一家公司。15寸+最高配带TouchBar的Pro已经分配到了我这里。装机的过程是痛苦的，因为打开电脑后，啥也没有。那就来个记录，免得以后遗忘。</p>
 </blockquote>
-<h3 id="XSS的攻击方式"><a href="#XSS的攻击方式" class="headerlink" title="XSS的攻击方式"></a>XSS的攻击方式</h3><ul>
-<li>反射型</li>
+<h3 id="Chrome-前端开发🐶的缘故，钟爱Chrome"><a href="#Chrome-前端开发🐶的缘故，钟爱Chrome" class="headerlink" title="Chrome(前端开发🐶的缘故，钟爱Chrome)"></a>Chrome(前端开发🐶的缘故，钟爱Chrome)</h3><ul>
+<li>Safiri搜索Chrome，选择Mac下载。<br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/Install-Mac/chrome-install.png" alt="ChromeInstall"></li>
 </ul>
-<blockquote>
-<p>发出请求是,XSS代码出现在URL中,作为输入提交到服务器端,服务器端解析后响应,XSS代码随着响应内容一起传回浏览器,最后浏览器解析执行XSS代码。这个过程像一次反射,故叫做反射型XSS。</p>
-</blockquote>
+<h3 id="微信-QQ-QQ音乐"><a href="#微信-QQ-QQ音乐" class="headerlink" title="微信+QQ+QQ音乐"></a>微信+QQ+QQ音乐</h3><a id="more"></a>
 <ul>
-<li>存储型</li>
+<li>AppStore登录账号，搜索安装即可</li>
 </ul>
-<blockquote>
-<p>存储型XSS和反射型XSS的差别在于,提交的代码会存储在服务器中(例如数据库,内存,文件系统等),下次请求页面是不用再提交XSS代码。</p>
-</blockquote>
-<h3 id="XSS的防御"><a href="#XSS的防御" class="headerlink" title="XSS的防御"></a>XSS的防御</h3><a id="more"></a>
+<h3 id="Office-破解版"><a href="#Office-破解版" class="headerlink" title="Office 破解版"></a>Office 破解版</h3><ul>
+<li>从同事那里获得一个<code>pkg</code>和<code>破解补丁.dmg</code>。<a href="http://www.baidu.com" target="_blank" rel="external">点击下载</a>。安装时先安装pkg，安装完成后，先不要点击各个office，紧接着安装破解补丁.dmg，安装后在登录，就是可以跳过登录的破解版了。</li>
+</ul>
+<h3 id="SourceTree-破解版"><a href="#SourceTree-破解版" class="headerlink" title="SourceTree 破解版"></a>SourceTree 破解版</h3><ul>
+<li><a href="http://www.baidu.com" target="_blank" rel="external">还未上传百度网盘连接</a></li>
+</ul>
+<h3 id="SublimeText"><a href="#SublimeText" class="headerlink" title="SublimeText"></a>SublimeText</h3><ul>
+<li><p>Safiri搜索Chrome，选择Mac下载。<br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/Install-Mac/sublime-install.png" alt="SublimeInstall"></p>
+</li>
+<li><p>安装后，需要设置字体。打开sublime，依次点击菜单栏<code>SublimeText-&gt;Preferences-&gt;seeting-user</code>，输入以下配置，保存：</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"font_face"</span>: <span class="string">"Courier New"</span>,</div><div class="line">  <span class="string">"font_size"</span>: <span class="number">17</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="ShadowsocksX-2-6-3"><a href="#ShadowsocksX-2-6-3" class="headerlink" title="ShadowsocksX-2.6.3"></a>ShadowsocksX-2.6.3</h3><ul>
+<li><a href="https://zh.osdn.net/projects/sfnet_shadowsocksgui/downloads/dist/ShadowsocksX-2.6.3.dmg/" target="_blank" rel="external">百度下载</a>.</li>
+</ul>
+<h3 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h3><ul>
+<li><a href="https://nodejs.org/en/download/" target="_blank" rel="external">官网下载</a>。安装过程中，记得选中`Make sure that /usr/local/bin is in your $PATH.</li>
+<li>Node安装后，是再带npm包管理器的。需要设置淘宝镜像</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">设置淘宝镜像：npm config set registry https://registry.npm.taobao.org</div><div class="line"></div><div class="line">设置为原镜像：npm config set registry http://registry.npmjs.org</div></pre></td></tr></table></figure>
+<h3 id="Git-xCode"><a href="#Git-xCode" class="headerlink" title="Git+xCode"></a>Git+xCode</h3><ul>
+<li>AppStore登录账号，搜索安装xCode即可.Git为xCode自带。安装之后命令行查看git版本即可。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">➜  ~ git version</div><div class="line">git version 2.11.0 (Apple Git-81)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="iTerm2-zsh"><a href="#iTerm2-zsh" class="headerlink" title="iTerm2+zsh"></a>iTerm2+zsh</h3><ul>
+<li><a href="http://www.iterm2.com/" target="_blank" rel="external">官网下载iTerm2</a>.按照步骤安装即可。</li>
+<li>打开iTerm2，依次点击<code>iterm2-&gt;Perfernce-&gt;Profile</code>，左下角新建<code>Profile</code>并命名如：myzsh。</li>
+<li>任意目录新建文件<code>Monokai-Soda.itermcolors</code>,<a href="https://raw.githubusercontent.com/tofishes/iterm2-zsh/master/_zshrc" target="_blank" rel="external">点击见详细内容</a></li>
+<li>步骤2中的新Profile-myzsh，右侧点击color，右下角点击<code>color presets</code>，选择<code>import</code>刚刚步骤3中创建的文件。记得：左侧点击<code>save defaults</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/Install-Mac/iterm2-1.png" alt="字体设置"><br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/Install-Mac/iterm2-2.png" alt="字号设置"><br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/Install-Mac/iterm2-3.png" alt="窗口及透明度设置"></p>
 <ul>
-<li>编码：对传递的数据进行编码转义，该操作可以在后端或者前端处理</li>
+<li>关闭窗口，重启iTerm2。新建tab，输入如下地址，并输入开机密码，完成安装zsh。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">“	----&gt;   &amp;quot; </div><div class="line">&amp;	----&gt;   &amp;amp;</div><div class="line">&lt;	----&gt;   &amp;lt;</div><div class="line">&gt;	----&gt;   &amp;gt;</div><div class="line">不间断的空格	----&gt;   &amp;nbsp;</div></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/Install-Mac/zsh-install.png" alt="zsh安装"></p>
 <ul>
-<li>过滤：移除掉数据中不合法的元素，标签，属性等</li>
+<li>关闭窗口，重启iTerm2。发现上方已经变成zsh。<br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/Install-Mac/zsh-show.png" alt="zsh展示"></li>
 </ul>
-<blockquote>
-<p>移除用户上传到dom属性。如img的onerror属性，可以出发xss攻击。<br>移除用户上传的style，iframe，script节点</p>
-</blockquote>
-<ul>
-<li>校正</li>
-</ul>
-<p>(1)避免直接对html entity解码</p>
-<blockquote>
-<p>在 HTML 中，某些字符是预留的。在 HTML 中不能使用小于号（&lt;）和大于号（&gt;），这是因为浏览器会误认为它们是标签。如果希望正确地显示预留字符，我们必须在 HTML 源代码中使用字符实体（character entities）。HTML 中的常用字符实体是不间断空格(&nbsp;)。</p>
-</blockquote>
-<p>(2)使用dom parse转换，校正不匹配的标签</p>
-<blockquote>
-<p>对匹配到的标签，属性等进行过滤</p>
-</blockquote>
-<p>(3)示例代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 解码</span></div><div class="line">HTMLParser(he.unescape(s,&#123;<span class="attr">strict</span>:<span class="literal">true</span>&#125;),&#123;</div><div class="line">	start:<span class="function"><span class="keyword">function</span>(<span class="params">tag,attrs,unary</span>)</span>&#123;</div><div class="line">        <span class="comment">// 过滤不合法的标签</span></div><div class="line">        <span class="keyword">if</span>(tag==<span class="string">'script'</span>||tag==<span class="string">'style'</span>||tag==<span class="string">'link'</span>||tag==<span class="string">'iframe'</span>||tag==<span class="string">'frame'</span>)<span class="keyword">return</span>;</div><div class="line">        results += <span class="string">'&lt;'</span>+tag;</div><div class="line">        <span class="comment">// 这里过滤掉全部的属性，实际中可根据需要有选择性的替换</span></div><div class="line">        <span class="comment">// for(var i=0,len=attrs.length;i&lt;len;i++)&#123;</span></div><div class="line">        <span class="comment">//     results += " "+attrs[i].name+'="'+attrs[i].escaped+'"';</span></div><div class="line">        <span class="comment">// &#125;</span></div><div class="line">        results += (unary?<span class="string">"/"</span>:<span class="string">""</span>)+<span class="string">"&gt;"</span>;</div><div class="line">    &#125;,</div><div class="line">    end:<span class="function"><span class="keyword">function</span>(<span class="params">tag</span>)</span>&#123;</div><div class="line">        results += <span class="string">"&lt;/"</span>+tag+<span class="string">"&gt;"</span>;</div><div class="line">    &#125;,</div><div class="line">    chars:<span class="function"><span class="keyword">function</span>(<span class="params">text</span>)</span>&#123;</div><div class="line">        results += text;</div><div class="line">    &#125;,</div><div class="line">    comment:<span class="function"><span class="keyword">function</span>(<span class="params">text</span>)</span>&#123;</div><div class="line">        results +=<span class="string">"&lt;!--"</span>+text+<span class="string">"--&gt;"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h3 id="XSS项目实战"><a href="#XSS项目实战" class="headerlink" title="XSS项目实战"></a>XSS项目实战</h3><p><a href="https://github.com/liujinhuan/XSS.git" target="_blank" rel="external">项目源码,叫我雷锋</a><br><a href="http://www.imooc.com/learn/812" target="_blank" rel="external">Web安全-XSS</a></p>
 
       
 
@@ -206,7 +225,7 @@
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XSS/">XSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ejs/">ejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web安全/">web安全</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li></ul>
 	</div>
 
       
@@ -270,18 +289,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/05/01/MongoDB的实战/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Node下MongoDB的实战
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/04/24/MongoDB的增删改查/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">MongoDB的增删改查</div>
+    <a href="/2017/06/14/初识Html5新特性/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初识Html5新特性</div>
       <i class="icon-circle-right"></i>
     </a>
   
