@@ -8,26 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>基于Vue+iView+Koa+Mongodb的后台管理系统--客户端 | 刘七七的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="经过6天的奋战，一个后台管理系统已经新鲜出炉了。感觉主要是闲的蛋疼。没事瞎搞。哈哈。
-
-记得在上一篇博客的尾巴中，承诺大家要做一个前后台通杀的小系统，以在实际的项目中运用。话不多说~开始吧。
-前言
-项目来源于大学的毕业设计，仅在实现CURD功能。其中，个别例子存在不合理之处(如：用户密码明文展示在表格中等)，请自行忽略，不要较真儿哦~
-
-项目及技术介绍
-该管理系统主要包括登录、图书管理、用户管理">
+  <meta name="description" content="经过6天的奋战，一个后台管理系统已经新鲜出炉了。感觉主要是闲的蛋疼。没事瞎搞。哈哈。  记得在上一篇博客的尾巴中，承诺大家要做一个前后台通杀的小系统，以在实际的项目中运用。话不多说~开始吧。 前言 项目来源于大学的毕业设计，仅在实现CURD功能。其中，个别例子存在不合理之处(如：用户密码明文展示在表格中等)，请自行忽略，不要较真儿哦~  项目及技术介绍 该管理系统主要包括登录、图书管理、用户管理">
+<meta name="keywords" content="Vue,iView,Koa,Mongodb,vue-router,koa-router,vue-resource">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于Vue+iView+Koa+Mongodb的后台管理系统--客户端">
 <meta property="og:url" content="http://yoursite.com/2017/05/16/基于Vue+iView+Koa+Mongodb的后台管理系统--客户端/index.html">
 <meta property="og:site_name" content="刘七七的个人博客">
-<meta property="og:description" content="经过6天的奋战，一个后台管理系统已经新鲜出炉了。感觉主要是闲的蛋疼。没事瞎搞。哈哈。
-
-记得在上一篇博客的尾巴中，承诺大家要做一个前后台通杀的小系统，以在实际的项目中运用。话不多说~开始吧。
-前言
-项目来源于大学的毕业设计，仅在实现CURD功能。其中，个别例子存在不合理之处(如：用户密码明文展示在表格中等)，请自行忽略，不要较真儿哦~
-
-项目及技术介绍
-该管理系统主要包括登录、图书管理、用户管理">
+<meta property="og:description" content="经过6天的奋战，一个后台管理系统已经新鲜出炉了。感觉主要是闲的蛋疼。没事瞎搞。哈哈。  记得在上一篇博客的尾巴中，承诺大家要做一个前后台通杀的小系统，以在实际的项目中运用。话不多说~开始吧。 前言 项目来源于大学的毕业设计，仅在实现CURD功能。其中，个别例子存在不合理之处(如：用户密码明文展示在表格中等)，请自行忽略，不要较真儿哦~  项目及技术介绍 该管理系统主要包括登录、图书管理、用户管理">
 <meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/2.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/login.png">
@@ -37,17 +24,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookupdate.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookdetail.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookdelete.png">
-<meta property="og:updated_time" content="2017-05-17T03:10:26.000Z">
+<meta property="og:updated_time" content="2017-09-14T10:10:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Vue+iView+Koa+Mongodb的后台管理系统--客户端">
-<meta name="twitter:description" content="经过6天的奋战，一个后台管理系统已经新鲜出炉了。感觉主要是闲的蛋疼。没事瞎搞。哈哈。
-
-记得在上一篇博客的尾巴中，承诺大家要做一个前后台通杀的小系统，以在实际的项目中运用。话不多说~开始吧。
-前言
-项目来源于大学的毕业设计，仅在实现CURD功能。其中，个别例子存在不合理之处(如：用户密码明文展示在表格中等)，请自行忽略，不要较真儿哦~
-
-项目及技术介绍
-该管理系统主要包括登录、图书管理、用户管理">
+<meta name="twitter:description" content="经过6天的奋战，一个后台管理系统已经新鲜出炉了。感觉主要是闲的蛋疼。没事瞎搞。哈哈。  记得在上一篇博客的尾巴中，承诺大家要做一个前后台通杀的小系统，以在实际的项目中运用。话不多说~开始吧。 前言 项目来源于大学的毕业设计，仅在实现CURD功能。其中，个别例子存在不合理之处(如：用户密码明文展示在表格中等)，请自行忽略，不要较真儿哦~  项目及技术介绍 该管理系统主要包括登录、图书管理、用户管理">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/1.png">
   
     <link rel="alternative" href="/atom.xml" title="刘七七的个人博客" type="application/atom+xml">
@@ -242,7 +222,7 @@
 </li>
 <li>子路由：后期的路由部分做了比较大的调整，主要为了解决引入菜单栏后，目标页面无法显示在内容区的问题。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</div><div class="line">  <span class="attr">mode</span>: <span class="string">'history'</span>, <span class="comment">// 指定路由采用history方式</span></div><div class="line">  routes: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">path</span>: <span class="string">'/home'</span>,</div><div class="line">      <span class="attr">name</span>: <span class="string">'home'</span>,</div><div class="line">      <span class="attr">component</span>: Home,</div><div class="line">      <span class="attr">children</span>: [ <span class="comment">//如下路由均为home的子路由,使其可以显示在home的路由之下</span></div><div class="line">        &#123;</div><div class="line">          <span class="attr">path</span>: <span class="string">'/'</span>,</div><div class="line">          <span class="attr">name</span>: <span class="string">'home'</span>,</div><div class="line">          <span class="attr">component</span>: BookList</div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">          <span class="attr">path</span>: <span class="string">'/booklist'</span>,</div><div class="line">          <span class="attr">name</span>: <span class="string">'booklist'</span>,</div><div class="line">          <span class="attr">component</span>: BookList</div><div class="line">        &#125;,</div><div class="line">        。。。。。。<span class="comment">// 省略号</span></div><div class="line">        &#123; </div><div class="line">          <span class="attr">path</span>: <span class="string">'/userdetail'</span>, </div><div class="line">          <span class="attr">name</span>: <span class="string">'userdetail'</span>,</div><div class="line">          <span class="attr">component</span>: UserDetail</div><div class="line">        &#125;</div><div class="line">      ]</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      <span class="attr">path</span>: <span class="string">'/'</span>,</div><div class="line">      <span class="attr">name</span>: <span class="string">'login'</span>,</div><div class="line">      <span class="attr">component</span>: Login</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</div><div class="line">  mode: <span class="string">'history'</span>, <span class="comment">// 指定路由采用history方式</span></div><div class="line">  routes: [</div><div class="line">    &#123;</div><div class="line">      path: <span class="string">'/home'</span>,</div><div class="line">      name: <span class="string">'home'</span>,</div><div class="line">      component: Home,</div><div class="line">      children: [ <span class="comment">//如下路由均为home的子路由,使其可以显示在home的路由之下</span></div><div class="line">        &#123;</div><div class="line">          path: <span class="string">'/'</span>,</div><div class="line">          name: <span class="string">'home'</span>,</div><div class="line">          component: BookList</div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">          path: <span class="string">'/booklist'</span>,</div><div class="line">          name: <span class="string">'booklist'</span>,</div><div class="line">          component: BookList</div><div class="line">        &#125;,</div><div class="line">        。。。。。。<span class="comment">// 省略号</span></div><div class="line">        &#123; </div><div class="line">          path: <span class="string">'/userdetail'</span>, </div><div class="line">          name: <span class="string">'userdetail'</span>,</div><div class="line">          component: UserDetail</div><div class="line">        &#125;</div><div class="line">      ]</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      path: <span class="string">'/'</span>,</div><div class="line">      name: <span class="string">'login'</span>,</div><div class="line">      component: Login</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <ul>
 <li>请求的发送：采用引入<code>vue-resource</code>来触发http请求。如：</li>
 </ul>

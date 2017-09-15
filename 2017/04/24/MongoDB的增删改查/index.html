@@ -8,43 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>MongoDB的增删改查 | 刘七七的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好像最近没那多鸡汤~直接开始吧~
-
-连接
-前面一节我们安装了ManogoDB，如果你成功安装了的话～那么，新开终端，输入下述指令进行连接。
-
-1mongo
-
-出现下述所示，很好，你成功啦～可以以命令行的方式操作啦
-
-1234567891011121314MongoDB shell version: 3.2.8connecting to: testWelcome to the MongoDB sh">
+  <meta name="description" content="好像最近没那多鸡汤~直接开始吧~  连接 前面一节我们安装了ManogoDB，如果你成功安装了的话～那么，新开终端，输入下述指令进行连接。  1mongo  出现下述所示，很好，你成功啦～可以以命令行的方式操作啦  1234567891011121314MongoDB shell version: 3.2.8connecting to: testWelcome to the MongoDB sh">
+<meta name="keywords" content="MongoDB,Mac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MongoDB的增删改查">
 <meta property="og:url" content="http://yoursite.com/2017/04/24/MongoDB的增删改查/index.html">
 <meta property="og:site_name" content="刘七七的个人博客">
-<meta property="og:description" content="好像最近没那多鸡汤~直接开始吧~
-
-连接
-前面一节我们安装了ManogoDB，如果你成功安装了的话～那么，新开终端，输入下述指令进行连接。
-
-1mongo
-
-出现下述所示，很好，你成功啦～可以以命令行的方式操作啦
-
-1234567891011121314MongoDB shell version: 3.2.8connecting to: testWelcome to the MongoDB sh">
-<meta property="og:updated_time" content="2017-05-01T15:17:04.000Z">
+<meta property="og:description" content="好像最近没那多鸡汤~直接开始吧~  连接 前面一节我们安装了ManogoDB，如果你成功安装了的话～那么，新开终端，输入下述指令进行连接。  1mongo  出现下述所示，很好，你成功啦～可以以命令行的方式操作啦  1234567891011121314MongoDB shell version: 3.2.8connecting to: testWelcome to the MongoDB sh">
+<meta property="og:updated_time" content="2017-09-14T10:10:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB的增删改查">
-<meta name="twitter:description" content="好像最近没那多鸡汤~直接开始吧~
-
-连接
-前面一节我们安装了ManogoDB，如果你成功安装了的话～那么，新开终端，输入下述指令进行连接。
-
-1mongo
-
-出现下述所示，很好，你成功啦～可以以命令行的方式操作啦
-
-1234567891011121314MongoDB shell version: 3.2.8connecting to: testWelcome to the MongoDB sh">
+<meta name="twitter:description" content="好像最近没那多鸡汤~直接开始吧~  连接 前面一节我们安装了ManogoDB，如果你成功安装了的话～那么，新开终端，输入下述指令进行连接。  1mongo  出现下述所示，很好，你成功啦～可以以命令行的方式操作啦  1234567891011121314MongoDB shell version: 3.2.8connecting to: testWelcome to the MongoDB sh">
   
     <link rel="alternative" href="/atom.xml" title="刘七七的个人博客" type="application/atom+xml">
   
@@ -198,7 +172,7 @@
 <ul>
 <li>如果你没有成功安装mongodb，你可能会出现如下的错误哦～</li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">MongoDB shell version: 3.2.8</div><div class="line">connecting to: test</div><div class="line">2016-08-02T18:14:33.677+0800 W NETWORK  [thread1] Failed to connect to 127.0.0.1:27017, reason: errno:61 Connection refused</div><div class="line">2016-08-02T18:14:33.678+0800 E QUERY    [thread1] Error: couldn't connect to server 127.0.0.1:27017, connection attempt failed :</div><div class="line">connect@src/mongo/shell/mongo.js:229:14</div><div class="line">@(connect):1:6</div><div class="line"></div><div class="line">exception: connect failed</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">MongoDB shell version: <span class="number">3.2</span><span class="number">.8</span></div><div class="line">connecting to: test</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T18:<span class="number">14</span>:<span class="number">33.677</span>+<span class="number">0800</span> W NETWORK  [thread1] Failed to connect to <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">27017</span>, <span class="attr">reason</span>: errno:<span class="number">61</span> Connection refused</div><div class="line"><span class="number">2016</span><span class="number">-08</span><span class="number">-02</span>T18:<span class="number">14</span>:<span class="number">33.678</span>+<span class="number">0800</span> E QUERY    [thread1] <span class="built_in">Error</span>: couldn<span class="string">'t connect to server 127.0.0.1:27017, connection attempt failed :</span></div><div class="line"><span class="string">connect@src/mongo/shell/mongo.js:229:14</span></div><div class="line"><span class="string">@(connect):1:6</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">exception: connect failed</span></div></pre></td></tr></table></figure>
 <ul>
 <li>所以，失败的～参考上一节～在安装下～</li>
 </ul>
