@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Express | 刘七七的个人博客</title>
+  <title>微信小程序和H5页面之间的通信 | 刘七七的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="刘七七的个人博客">
-<meta property="og:url" content="http://yoursite.com/tags/Express/index.html">
+  <meta name="description" content="小程序和h5页面之间的通信  前言 小程序webview组件对嵌入的H5页面有要求、必须在小程序管理后台配置为合法的业务域名。 H5页面调用小程序的能力有限，详情可参见微信小程序API  H5端 H5页面需要引用微信提供的官方sdk 1https://res.wx.qq.com/open/js/jweixin-1.3.2.js  在按钮点击处，给小程序发送信息 1234&amp;lt;!-- 具体参数、">
+<meta name="keywords" content="wxMiniprogram,h5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序和H5页面之间的通信">
+<meta property="og:url" content="http://yoursite.com/2018/09/29/微信小程序和H5页面之间的通信/index.html">
 <meta property="og:site_name" content="刘七七的个人博客">
+<meta property="og:description" content="小程序和h5页面之间的通信  前言 小程序webview组件对嵌入的H5页面有要求、必须在小程序管理后台配置为合法的业务域名。 H5页面调用小程序的能力有限，详情可参见微信小程序API  H5端 H5页面需要引用微信提供的官方sdk 1https://res.wx.qq.com/open/js/jweixin-1.3.2.js  在按钮点击处，给小程序发送信息 1234&amp;lt;!-- 具体参数、">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-29T10:19:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="刘七七的个人博客">
+<meta name="twitter:title" content="微信小程序和H5页面之间的通信">
+<meta name="twitter:description" content="小程序和h5页面之间的通信  前言 小程序webview组件对嵌入的H5页面有要求、必须在小程序管理后台配置为合法的业务域名。 H5页面调用小程序的能力有限，详情可参见微信小程序API  H5端 H5页面需要引用微信提供的官方sdk 1https://res.wx.qq.com/open/js/jweixin-1.3.2.js  在按钮点击处，给小程序发送信息 1234&amp;lt;!-- 具体参数、">
   
     <link rel="alternative" href="/atom.xml" title="刘七七的个人博客" type="application/atom+xml">
   
@@ -135,54 +140,140 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-微信小程序和H5页面之间的通信" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
         
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/27/XSS攻击学习笔记/" class="archive-article-date">
-  	<time datetime="2017-04-27T10:15:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/27/XSS攻击学习笔记/">XSS攻击学习笔记</a>
+    <h1 class="article-title" itemprop="name">
+      微信小程序和H5页面之间的通信
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <a href="/2018/09/29/微信小程序和H5页面之间的通信/" class="archive-article-date">
+  	<time datetime="2018-09-29T09:43:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-29</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>小程序和h5页面之间的通信</p>
+</blockquote>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><ul>
+<li>小程序webview组件对嵌入的H5页面有要求、必须在小程序管理后台配置为<code>合法的业务域名</code>。</li>
+<li>H5页面调用小程序的能力有限，详情可参见微信小程序API</li>
+</ul>
+<h3 id="H5端"><a href="#H5端" class="headerlink" title="H5端"></a>H5端</h3><ul>
+<li><p>H5页面需要引用微信提供的官方sdk</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://res.wx.qq.com/open/js/jweixin-1.3.2.js</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在按钮点击处，给小程序发送信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 具体参数、具体分析 --&gt;</span><br><span class="line">wx.miniProgram.postMessage(&#123; data: &apos;foo&apos; &#125;)</span><br><span class="line">&lt;!-- 详见`坑`处的说明 --&gt;</span><br><span class="line">wx.miniProgram.navigateBack()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<h3 id="小程序端"><a href="#小程序端" class="headerlink" title="小程序端"></a>小程序端</h3><ul>
+<li><p>页面中添加<code>webview</code>组件、并添加监听事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;web-view src=&apos;&#123;&#123;url&#125;&#125;&apos; bindmessage=&apos;receivePostMsg&apos;&gt;&lt;/web-view&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>js里面添加监听事件,<code>e.detail</code>里面可以看到传递的参数，根据收到的信息进行相应操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">receivePostMsg:function(e)&#123;</span><br><span class="line">    console.log(&quot;收到的消息是&quot;,e)</span><br><span class="line">    app.globalData.isSHowKefu = true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h3><ul>
+<li>网页向小程序 postMessage 时，会在特定时机（小程序后退、组件销毁、分享）触发并收到消息。所以想收到消息的时候，就要做下上面的操作才可以。比如发消息之后，在执行个页面回退等。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--具体参数再商议--&gt;</span><br><span class="line">wx.miniProgram.postMessage(&#123; data: &apos;foo&apos; &#125;)</span><br><span class="line">&lt;!--需回退到小程序上层页面--&gt;</span><br><span class="line">wx.miniProgram.navigateBack()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XSS/">XSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ejs/">ejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web安全/">web安全</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/h5/">h5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wxMiniprogram/">wxMiniprogram</a></li></ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        <div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode"></div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/15/新Mac的装机过程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">新Mac的装机过程</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+
 
 
       </div>
@@ -204,9 +295,9 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
