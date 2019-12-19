@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>基于Vue+iView+Koa+Mongodb的后台管理系统--客户端 | 刘七七的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,20 +16,20 @@
 <meta property="og:site_name" content="刘七七的个人博客">
 <meta property="og:description" content="经过6天的奋战，一个后台管理系统已经新鲜出炉了。感觉主要是闲的蛋疼。没事瞎搞。哈哈。  记得在上一篇博客的尾巴中，承诺大家要做一个前后台通杀的小系统，以在实际的项目中运用。话不多说~开始吧。 前言 项目来源于大学的毕业设计，仅在实现CURD功能。其中，个别例子存在不合理之处(如：用户密码明文展示在表格中等)，请自行忽略，不要较真儿哦~  项目及技术介绍 该管理系统主要包括登录、图书管理、用户管理">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/1.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/2.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/login.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/home.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/booklist.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookadd.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookupdate.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookdetail.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookdelete.png">
-<meta property="og:updated_time" content="2017-09-14T10:10:42.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/login.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/home.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/booklist.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/bookadd.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/bookupdate.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/bookdetail.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/bookdelete.png">
+<meta property="og:updated_time" content="2019-12-19T12:43:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Vue+iView+Koa+Mongodb的后台管理系统--客户端">
 <meta name="twitter:description" content="经过6天的奋战，一个后台管理系统已经新鲜出炉了。感觉主要是闲的蛋疼。没事瞎搞。哈哈。  记得在上一篇博客的尾巴中，承诺大家要做一个前后台通杀的小系统，以在实际的项目中运用。话不多说~开始吧。 前言 项目来源于大学的毕业设计，仅在实现CURD功能。其中，个别例子存在不合理之处(如：用户密码明文展示在表格中等)，请自行忽略，不要较真儿哦~  项目及技术介绍 该管理系统主要包括登录、图书管理、用户管理">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/1.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/1.png">
   
     <link rel="alternative" href="/atom.xml" title="刘七七的个人博客" type="application/atom+xml">
   
@@ -40,7 +40,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -195,7 +195,7 @@
 <li>创建一个基于 webpack 模板的新项目</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack client(目录名称)</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/1.png" alt="基于 webpack 模板的新项目"></p>
+<p><img src="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/1.png" alt="基于 webpack 模板的新项目"></p>
 <ul>
 <li>安装依赖及运行</li>
 </ul>
@@ -204,7 +204,7 @@
 <li>安装iView</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install iview --save</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/2.png" alt="安装iView"></p>
+<p><img src="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/2.png" alt="安装iView"></p>
 <ul>
 <li>在 webpack 入口页面 main.js 中配置iView：</li>
 </ul>
@@ -237,13 +237,13 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Store <span class="keyword">from</span> <span class="string">'@/utils/store'</span></span><br><span class="line"><span class="keyword">import</span> Url <span class="keyword">from</span> <span class="string">'@/utils/url'</span></span><br></pre></td></tr></table></figure>
 <h3 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h3><ul>
-<li>登录<br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/login.png" alt="Login"></li>
-<li>home主页<br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/home.png" alt="home"></li>
-<li>图书列表的请求<br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/booklist.png" alt="booklist"></li>
-<li>图书的添加<br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookadd.png" alt="bookadd"></li>
-<li>图书的修改<br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookupdate.png" alt="bookupdate"></li>
-<li>图书的详情<br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookdetail.png" alt="bookdetail"></li>
-<li>图书的删除<br><img src="https://raw.githubusercontent.com/liujinhuan/StaticResource/master/images/AdminBook/client/bookdelete.png" alt="bookdelete"></li>
+<li>登录<br><img src="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/login.png" alt="Login"></li>
+<li>home主页<br><img src="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/home.png" alt="home"></li>
+<li>图书列表的请求<br><img src="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/booklist.png" alt="booklist"></li>
+<li>图书的添加<br><img src="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/bookadd.png" alt="bookadd"></li>
+<li>图书的修改<br><img src="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/bookupdate.png" alt="bookupdate"></li>
+<li>图书的详情<br><img src="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/bookdetail.png" alt="bookdetail"></li>
+<li>图书的删除<br><img src="https://raw.githubusercontent.com/liujinhuan/LearnNotes/master/imgs/AdminBook/client/bookdelete.png" alt="bookdelete"></li>
 </ul>
 <blockquote>
 <p>有种喜悦叫做从无到有。Server端的博客后续推出~敬请期待。</p>
@@ -352,7 +352,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 刘七七
+    		&copy; 2019 刘七七
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
